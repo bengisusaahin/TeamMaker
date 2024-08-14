@@ -43,7 +43,8 @@ import com.yusuf.utils.getLottieAnimationResource
 @Composable
 fun Weather(
     weatherViewModel: WeatherViewModel = hiltViewModel(),
-    location: Location,
+    lat: Double,
+    lon: Double,
     locationName: String,
     weatherName: (CurrentWeatherModel) -> Unit
 ) {
@@ -73,8 +74,8 @@ fun Weather(
     // Trigger fetching weather data
     LaunchedEffect(true) {
             try {
-                Log.d("WeatherComponent", "Fetching weather data for location: ${location.latitude}, ${location.longitude}")
-                weatherViewModel.getCurrentWeather(lat = location.latitude, lon = location.longitude)
+                Log.d("WeatherComponent", "Fetching weather data for location: $lat, $lon")
+                weatherViewModel.getCurrentWeather(lat = lat, lon = lon)
             } catch (e: Exception) {
                 Log.e("WeatherComponent", "Error fetching weather data", e)
             }

@@ -1,6 +1,7 @@
 package com.yusuf.feature.competition_detail
 
 import android.annotation.SuppressLint
+import android.util.Log
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -121,9 +122,10 @@ fun CompetitionDetailScreen(
             Spacer(modifier = Modifier.height(2.dp))
 
             if (competitionDetail != null) {
-                if (competitionDetail.location != null && competitionDetail.locationName != null){
+                if (competitionDetail.latitude != null && competitionDetail.longitude != null &&competitionDetail.locationName != null){
                     Weather(
-                        location = competitionDetail.location!!,
+                        lat = competitionDetail.latitude!!,
+                        lon = competitionDetail.longitude!!,
                         locationName = competitionDetail.locationName!!
                     ) { weather ->
                         sentWeatherModel = weather

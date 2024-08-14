@@ -318,7 +318,7 @@ fun AddPlayerDialog(
                             condition = condition,
                             durability = durability,
                             generalSkill = generalSkill,
-                            totalSkillRating = (speed + focus + condition + durability) / 4 + generalSkill
+                            totalSkillRating = if (isGeneralSkillUsed) generalSkill else (speed + focus + condition + durability)/4
                         )
                     )
                     updateList()

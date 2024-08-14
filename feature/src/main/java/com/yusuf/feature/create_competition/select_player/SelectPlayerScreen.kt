@@ -107,10 +107,11 @@ fun SelectPlayerScreen(
                     selectedDate = datePicker,
                     firstBalancedTeam = teamBalancerUIState.teams!!.first,
                     secondBalancedTeam = teamBalancerUIState.teams!!.second,
-                    location = location,
                     locationName = locationName,
                     imageUrl = imageUrl,
-                    competitionName = it
+                    competitionName = it,
+                    latitude = location?.latitude,
+                    longitude = location?.longitude
                 )
             }?.let {
                 NavigationGraph.getCompetitionDetailsRoute(

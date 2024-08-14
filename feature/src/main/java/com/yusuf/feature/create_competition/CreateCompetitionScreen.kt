@@ -4,6 +4,7 @@ package com.yusuf.feature.create_competition
 import android.location.Location
 import androidx.compose.ui.Modifier
 import android.os.Build
+import android.util.Log
 import androidx.annotation.RequiresApi
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column

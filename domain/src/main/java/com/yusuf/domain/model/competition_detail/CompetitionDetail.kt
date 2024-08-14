@@ -9,8 +9,9 @@ data class CompetitionDetail(
     val selectedDate: String,
     val firstBalancedTeam: List<PlayerData>? = null,
     val secondBalancedTeam: List<PlayerData>? = null,
-    val location: Location? = null,
     val locationName: String? = null,
     val imageUrl: String? = null,
-    val competitionName: String
+    val competitionName: String,
+    val latitude: Double? = null,
+    val longitude: Double? = null,
 ) : Serializable
