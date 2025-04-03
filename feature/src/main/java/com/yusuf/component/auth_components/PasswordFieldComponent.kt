@@ -24,7 +24,7 @@ import com.yusuf.feature.R
 
 
 @Composable
-fun PasswordFieldComponent(stateValue:String,label: String,onValueChange: (String) -> Unit , painterResource : Painter){
+fun PasswordFieldComponent(label: String,onValueChange: (String) -> Unit , painterResource : Painter){
 
     val password = remember { mutableStateOf("") }
     val passwordVisibility = remember { mutableStateOf(false) }

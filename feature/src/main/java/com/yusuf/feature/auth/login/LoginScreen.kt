@@ -98,7 +98,6 @@ fun LoginScreen(
                     painterResource = painterResource(id = R.drawable.mail_icon)
                 )
                 PasswordFieldComponent(
-                    password,
                     label = "Password",
                     onValueChange = { updatedPassword -> password = updatedPassword.trim() },
                     painterResource(id = R.drawable.ic_lock)

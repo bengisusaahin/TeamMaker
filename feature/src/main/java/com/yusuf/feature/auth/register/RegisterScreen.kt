@@ -99,7 +99,6 @@ fun RegisterScreen(
                 )
 
                 PasswordFieldComponent(
-                    stateValue = password,
                     onValueChange = { updatedPassword ->
                         password = updatedPassword.trim()
                     },
