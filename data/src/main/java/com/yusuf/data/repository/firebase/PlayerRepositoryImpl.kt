@@ -94,7 +94,7 @@ class PlayerRepositoryImpl @Inject constructor(
                         }
 
                         is RootResult.Error -> {
-                            emit(RootResult.Error(result.message ?: "Image upload failed"))
+                            emit(RootResult.Error(result.message))
                         }
                     }
                 }
@@ -240,7 +240,6 @@ class PlayerRepositoryImpl @Inject constructor(
             try {
                 val storageRef =
                     storage.reference.child("$imagePathString/${UUID.randomUUID()}.jpg")
-                val uploadTask = storageRef.putFile(uri).await()
                 val downloadUrl = storageRef.downloadUrl.await()
                 emit(RootResult.Success(downloadUrl.toString()))
             } catch (e: Exception) {
